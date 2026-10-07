@@ -24,7 +24,7 @@ The project helps in learning the basic structure of network packets and identif
 - Displays the time at which each packet is captured
 - Processes multiple packets during a single execution
 
--## Technologies Used
+## Technologies Used
 
 - Python
 - Scapy
