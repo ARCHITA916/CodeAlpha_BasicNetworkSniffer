@@ -1,5 +1,6 @@
-from scapy.all import sniff, IP, TCP, UDP,Raw
+from scapy.all import sniff, IP, TCP, UDP, Raw
 from datetime import datetime
+
 
 def analyze_packet(packet):
     if IP in packet:
