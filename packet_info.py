@@ -78,12 +78,4 @@ def analyze_packet(packet):
 sniff(count=20, prn=analyze_packet, store=False)
 
 
-        print("_"*50)
-        print(f"Time: {timestamp}")
-        print(f"{source}->{destination}")
-        print(f"Protocol: {protocol}")
-        print(f"Source Port: {source_port}")
-        print(f"Destination Port: {destination_port}")
-        print(f"Payload Size: {payload_size} bytes")
-
-sniff(count=20,prn=analyze_packet,store=False)
+        
