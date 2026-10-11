@@ -2,26 +2,27 @@
 
 ## Overview
 
-A basic network sniffer developed using Python and Scapy as part of the CodeAlpha Cyber Security Internship.
+This project is a basic network sniffer developed in Python using the Scapy library.
 
-The program captures network packets and displays useful information such as source and destination IP addresses, protocols, port numbers, packet payload size, payload preview, and capture time.
+The program captures network packets and analyzes basic packet information such as source IP address, destination IP address, protocol, port numbers, payload size, and capture time.
 
-## Objectives
+This project was developed as part of the CodeAlpha Cyber Security Internship.
 
-- Understand how network packets travel between devices.
-- Learn the basic structure of IP packets.
-- Identify common network protocols.
-- Practice packet capture and analysis using Python.
+## Objective
+
+The main objective of this project is to understand how network packets are captured and how information is exchanged between devices over a network.
+
+The project helps in learning the basic structure of network packets and identifying common protocols such as TCP, UDP, and ICMP.
 
 ## Features
 
-- Captures multiple network packets using Scapy.
-- Displays source and destination IP addresses.
-- Identifies TCP, UDP, and ICMP protocols.
-- Displays source and destination ports when available.
-- Calculates the size of raw packet payloads.
-- Displays a preview of up to 50 bytes of raw payload when available.
-- Records the time when each packet is processed.
+- Captures network packets using Scapy
+- Displays source and destination IP addresses
+- Identifies common network protocols such as TCP, UDP, and ICMP
+- Displays source and destination port numbers for TCP and UDP packets
+- Shows the payload size of captured packets
+- Displays the time at which each packet is captured
+- Processes multiple packets during a single execution
 
 ## Technologies Used
 
@@ -33,72 +34,27 @@ The program captures network packets and displays useful information such as sou
 
 ## How It Works
 
-1. Imports the required Python and Scapy modules.
-2. Captures network packets.
-3. Checks whether a packet contains an IP layer.
-4. Extracts source and destination IP addresses.
+The program follows these basic steps:
+
+1. Imports the required Scapy modules.
+2. Defines a function to analyze each captured packet.
+3. Checks whether the packet contains an IP layer.
+4. Extracts the source and destination IP addresses.
 5. Identifies the network protocol.
-6. Extracts TCP or UDP port numbers when available.
-7. Calculates the raw payload size and displays a short preview when available.
-8. Prints the analyzed packet information.
-
-## Requirements
-
-- Python installed on your computer.
-- Scapy Python library.
-- Npcap installed on Windows when required for packet capture.
-- Appropriate permissions to capture network traffic.
+6. Extracts source and destination ports for TCP and UDP packets.
+7. Checks whether the packet contains a payload and calculates its size.
+8. Displays the analyzed packet information.
+9. Captures multiple packets from the network for analysis.
 
 ## Installation
 
 ### 1. Install Python
 
-Download Python from https://www.python.org/downloads/ and follow the installation instructions.
+Download and install Python on your system.
 
-### 2. Install Npcap
+### 2. Install Scapy
 
-On Windows, install Npcap from https://npcap.com/ if required for your network adapter and Scapy configuration.
-
-### 3. Install Scapy
-
-Open PowerShell or Command Prompt and run:
+Open Command Prompt or PowerShell and run:
 
 ```bash
 python -m pip install scapy
-```
-
-### 4. Download the Project
-
-Clone the repository:
-
-```bash
-git clone https://github.com/ARCHITA916/CodeAlpha_BasicNetworkSniffer.git
-```
-
-Move into the project folder:
-
-```bash
-cd CodeAlpha_BasicNetworkSniffer
-```
-
-## Run the Program
-
-Run the following command from the project folder:
-
-```bash
-python packet_info.py
-```
-
-The program attempts to capture up to 20 packets and displays the analyzed information. Packet capture may require running the terminal with appropriate permissions and selecting a supported network interface.
-
-## Ethical Use and Limitations
-
-Use this tool only on your own network or on networks for which you have explicit authorization to monitor traffic.
-
-The payload preview may contain sensitive information. The program displays only a short preview and does not decode every protocol or capture every possible packet type. Packets without an IP layer are ignored.
-
-## Learning Outcome
-
-This project provides introductory hands-on experience with Python, packet capture, network protocols, and basic network traffic analysis.
-
-Developed as part of the CodeAlpha Cyber Security Internship.
