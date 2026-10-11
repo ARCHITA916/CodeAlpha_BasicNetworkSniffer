@@ -26,17 +26,23 @@ def analyze_packet(packet):
         else:
             source_port = "-"
             destination_port = "-"
+        
         if Raw in packet:
-            payload_size = len(packet[Raw].load)
+            payload = bytes(packet[Raw].load)
+            payload_size = len(payload)
+            payload_preview = repr(payload[:50])
         else:
             payload_size = 0
-
-        print("_"*50)
-        print(f"Time: {timestamp}")
-        print(f"{source}->{destination}")
-        print(f"Protocol: {protocol}")
-        print(f"Source Port: {source_port}")
-        print(f"Destination Port: {destination_port}")
-        print(f"Payload Size: {payload_size} bytes")
+            payload_preview = "No raw payload"
+       
+            
+            print("_" * 50)
+            print(f"Time: {timestamp}")
+            print(f"{source} -> {destination}")
+            print(f"Protocol: {protocol}")
+            print(f"Source Port: {source_port}")
+            print(f"Destination Port: {destination_port}")
+            print(f"Payload Size: {payload_size} bytes")
+            print(f"Payload Preview: {payload_preview}")
 
 sniff(count=20,prn=analyze_packet,store=False)
